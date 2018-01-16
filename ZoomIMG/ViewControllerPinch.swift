@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewControllerPinch: UIViewController {
 
     @IBOutlet weak var imageViewAbove: UIImageView!
     @IBOutlet weak var imageViewBelow: UIImageView!
@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        // Load image cách 1
         get_image("https://www.wallpaperup.com/uploads/wallpapers/2014/11/17/519385/82b58deee6b45bfbcf86c42837e8e812.jpg", imageViewAbove)
         get_image("https://www.wallpaperup.com/uploads/wallpapers/2013/06/17/103939/aacab500845f96df64496793afdb2f89.jpg", imageViewBelow)
     }
