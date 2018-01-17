@@ -27,23 +27,19 @@ class ViewControllerLoadZoom: UIViewController, UIScrollViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let imageUrlString = "https://www.wallpaperup.com/uploads/wallpapers/2014/11/17/519385/82b58deee6b45bfbcf86c42837e8e812.jpg"
-        let imageUrl:URL = URL(string: imageUrlString)!
+        let imageUrl = URL(string: "https://www.wallpaperup.com/uploads/wallpapers/2014/11/17/519385/82b58deee6b45bfbcf86c42837e8e812.jpg")!
         
         DispatchQueue.global(qos: .userInitiated).async {
-            let imageData:NSData = NSData(contentsOf: imageUrl)!
+            let imageData = NSData(contentsOf: imageUrl)!
             let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height))
             
             DispatchQueue.main.async {
-                let image = UIImage(data: imageData as Data)
-                imageView.image = image
+                imageView.image = UIImage(data: imageData as Data)
                 imageView.contentMode = UIViewContentMode.scaleAspectFit
                 self.view.addSubview(imageView)
                 self.imgView = imageView
             }
         }
-        
-        print("ịhioij")
     }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
