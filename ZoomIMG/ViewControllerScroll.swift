@@ -36,6 +36,7 @@ class ViewControllerScroll: UIViewController, UIScrollViewDelegate {
             print("loi download internet")
         }
     }
+
     
     // Zoom image
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {

@@ -21,7 +21,7 @@ class ViewControllerPinch: UIViewController {
         getImage("https://www.wallpaperup.com/uploads/wallpapers/2014/11/17/519385/82b58deee6b45bfbcf86c42837e8e812.jpg", imageViewAbove)
         getImage("https://www.wallpaperup.com/uploads/wallpapers/2013/06/17/103939/aacab500845f96df64496793afdb2f89.jpg", imageViewBelow)
     }
-    // Hiển thị ảnh bằng việc tải ảnh từ wed 
+    // Tạo phương thức với một trình xử lý hoàn thành lấy dữ liệu hình ảnh từ url
     func getImage(_ urlText:String, _ imageView:UIImageView) {
         let url = URL(string: urlText)!
         let session = URLSession.shared
@@ -42,6 +42,7 @@ class ViewControllerPinch: UIViewController {
         })
         task.resume()
     }
+
     // zoom ảnh bằng pinch
     @IBAction func pinchView(_ sender: UIPinchGestureRecognizer) {
         sender.view?.transform = (sender.view?.transform.scaledBy(x: sender.scale, y: sender.scale))!
